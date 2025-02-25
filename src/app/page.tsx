@@ -7,6 +7,10 @@ import {
   Search,
   UserPlus,
   Smile,
+  Users,
+  Zap,
+  ShieldCheck,
+  Coins,
 } from "lucide-react";
 
 const providerSteps = [
@@ -220,8 +224,44 @@ export default function Home() {
 
         {/* Why chose us */}
         <section className="pt-16">
-          <div className="container">
-            <div></div>
+          <div className="container px-8">
+            <h2 className="text-4xl text-center font-extrabold mb-8">
+              Why Choose Our Marketplace
+            </h2>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+              <div className="flex flex-col justify-center items-center bg-purple-50 w-full p-8 rounded-lg">
+                <Users className="h-10 w-10" />
+                <h3 className="text-xl text-center font-bold">Wide Network</h3>
+
+                <p>
+                  Connect with a diverse range of beauty professionals and
+                  clients
+                </p>
+              </div>
+              <div className="flex flex-col justify-center items-center bg-purple-50 w-100 p-8 rounded-lg">
+                <Zap className="h-10 w-10" />
+                <h3 className="text-xl text-center font-bold">Convenience</h3>
+
+                <p>Book or offer services anytime, anywhere</p>
+              </div>
+              <div className="flex flex-col justify-center items-center bg-purple-50 w-100 p-8 rounded-lg">
+                <ShieldCheck className="h-10 w-10" />
+                <h3 className="text-xl text-center font-bold">
+                  Secure Platform
+                </h3>
+
+                <p>Safe transactions and verified profiles</p>
+              </div>
+              <div className="flex flex-col justify-center items-center bg-purple-50 w-100 p-8 rounded-lg">
+                <Coins className="h-10 w-10" />
+                <h3 className="text-xl text-center font-bold">
+                  Competitive Pricing
+                </h3>
+
+                <p>Find great deals or set your own rates</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
