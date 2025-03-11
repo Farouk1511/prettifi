@@ -12,6 +12,7 @@ import {
   ShieldCheck,
   Coins,
 } from "lucide-react";
+import Link from "next/link";
 
 const providerSteps = [
   {
@@ -223,8 +224,8 @@ export default function Home() {
         </section> */}
 
         {/* Why chose us */}
-        <section className="pt-16">
-          <div className="container px-8">
+        <section className="py-20">
+          <div className="container mx-auto">
             <h2 className="text-4xl text-center font-extrabold mb-8">
               Why Choose Our Marketplace
             </h2>
@@ -264,6 +265,68 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        {/* What our customers say  - dont have customers yet no need to add this*/}
+        {/* <section className="py-20 bg-purple-50">
+          <div className="container mx-auto">
+            <h1 className="text-5xl text-center font-bold">What Our Customers Say</h1>
+            <div className="flex flex-row mt-8">
+              <div>
+                <Star/>
+                <p>
+
+                </p>
+                <span>
+
+                </span>
+
+                
+              </div>
+              <div>
+
+              </div>
+              <div>
+
+              </div>
+              <div>
+
+              </div>
+
+            </div>
+          </div>
+        </section> */}
+
+        <section className="p-24 bg-purple-50">
+          <div className="container">
+            <div className="flex flex-col justify-center items-center space-y-3">
+              <h1 className="text-6xl font-extrabold">
+                Are You a Beauty Professional?
+              </h1>
+              <p className="font-light text-base">
+                Join our platform to reach more clients and grow your business.
+              </p>
+              <Button className="w-1/4 h-12 text-lg">
+                <Users />
+                Join as a Pro
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        <footer className="py-10 px-5">
+          <div className="container">
+            <div className="flex flex-row justify-between font-light text-sm">
+              <div>
+                <span>© 2024 BeautyHub. All rights reserved.</span>
+              </div>
+
+              <div className="space-x-3">
+                <Link href="#">Terms of Service</Link>
+                <Link href="#">Privacy</Link>
+              </div>
+            </div>
+          </div>
+        </footer>
       </main>
     </div>
   );
