@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Airplane,EyeClosed,HairDryer, Hand, Palette, Seat, Towel } from "@phosphor-icons/react/dist/ssr";
 import {
   Banknote,
   Briefcase,
@@ -11,6 +12,7 @@ import {
   Zap,
   ShieldCheck,
   Coins,
+  AlignJustify,
 } from "lucide-react";
 import Link from "next/link";
 
@@ -51,28 +53,30 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Header */}
       <header className="flex p-4 justify-between items-center">
-        <h1 className="text-3xl font-bold">PrettiFi</h1>
+        <h1 className="text-4xl font-extrabold">PrettiFi</h1>
 
-        <div className="space-x-4">
+        <div className="space-x-4 md:block hidden">
           <Button>Find Services</Button>
           <Button>Offer Services</Button>
         </div>
+
+        <AlignJustify className="md:hidden"/>
       </header>
 
       {/* Body */}
       <main className="flex-1">
         {/* Hero section */}
-        <section className="p-28 bg-purple-50">
+        <section className="p-8 md:p-28 bg-purple-50">
           <div className="container">
             <div className="flex items-center text-start flex-col space-y-4">
-              <h1 className="text-5xl font-extrabold">Your Beauty, Your Way</h1>
+            <h1 className="text-5xl md:text-6xl font-extrabold">Your Beauty, Your Way</h1>
               <p className="font-light text-base">
                 Discover and book the best beauty services in your area. Hair,
                 lashes, and more at your fingertips.
               </p>
 
               <div className="flex w-full max-w-md items-center space-x-2">
-                <Input type="search" placeholder="Search for a service" />
+                <Input className="bg-white" type="search" placeholder="Search for a service" />
                 <Button type="submit">
                   <Search />
                   Search
@@ -82,28 +86,30 @@ export default function Home() {
           </div>
         </section>
         {/* Feature services */}
-        <section className="p-16">
+        <section className="p-8 md:p-16">
           <div className="container">
             <h2 className="text-4xl font-bold text-center mb-8">
               Feature Services
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
               {[
-                "Hair Styling",
-                "Eyelash Extensions",
-                "Makeup",
-                "Nail Care",
-                "Skincare",
-                "Massage",
+                {name:"Hair Styling",icon:<HairDryer className="w-10 h-10"/>},
+                {name:"Eyelash Extensions",icon:<EyeClosed className="w-10 h-10"/>},
+               { name:"Makeup",icon:<Palette className="w-10 h-10"/>},
+                {name:"Nail Care",icon:<Hand className="w-10 h-10"/>},
+                {name:"Skincare",icon:<Towel className="w-10 h-10"/>},
+                {name:"Massage",icon:<Seat className="w-10 h-10"/>},
               ].map((service) => (
                 <div
-                  key={service}
+                  key={service.name}
                   className="flex flex-col items-center p-4 bg-purple-50 rounded-lg"
                 >
-                  <div className="h-20 w-20 bg-purple-100 rounded-full flex items-center justify-center mb-4"></div>
-                  <h3 className="text-xl font-bold mb-2">{service}</h3>
+                  <div className="h-20 w-20 bg-purple-100 rounded-full flex items-center justify-center mb-4">
+                   {service.icon}
+                  </div>
+                  <h3 className="text-xl font-bold mb-2 text-center">{service.name}</h3>
                   <p className="text-center text-gray-500">
-                    Professional {service.toLowerCase()} services
+                    Professional {service.name.toLowerCase()} services
                   </p>
                 </div>
               ))}
@@ -111,9 +117,9 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="bg-purple-50 py-20 px-4 sm:px-6 lg:px-8">
+        <section className="bg-purple-50 py-10 md:py-20 px-4 sm:px-6 lg:px-8">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+            <h2 className="text-4xl sm:text-4xl font-bold text-center mb-6 md:mb-12">
               How It Works
             </h2>
             <div className="grid md:grid-cols-2 gap-12">
@@ -224,7 +230,7 @@ export default function Home() {
         </section> */}
 
         {/* Why chose us */}
-        <section className="py-20">
+        <section className="p-8 md:p-16">
           <div className="container mx-auto">
             <h2 className="text-4xl text-center font-extrabold mb-8">
               Why Choose Our Marketplace
@@ -296,16 +302,16 @@ export default function Home() {
           </div>
         </section> */}
 
-        <section className="p-24 bg-purple-50">
+        <section className="p-8 md:p-24 bg-purple-50">
           <div className="container">
             <div className="flex flex-col justify-center items-center space-y-3">
-              <h1 className="text-6xl font-extrabold">
+              <h1 className="text-4xl md:text-6xl font-extrabold">
                 Are You a Beauty Professional?
               </h1>
               <p className="font-light text-base">
                 Join our platform to reach more clients and grow your business.
               </p>
-              <Button className="w-1/4 h-12 text-lg">
+              <Button className="md:w-1/4 md:h-12 text-lg">
                 <Users />
                 Join as a Pro
               </Button>
