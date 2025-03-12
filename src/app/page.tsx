@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Airplane,EyeClosed,HairDryer, Hand, Palette, Seat, Towel } from "@phosphor-icons/react/dist/ssr";
+import { EyeClosed,HairDryer, Hand, Palette, Seat, Towel } from "@phosphor-icons/react/dist/ssr";
 import {
   Banknote,
   Briefcase,
